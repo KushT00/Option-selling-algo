@@ -122,5 +122,5 @@ The bot will:
 - **No new trade signals triggered**: This means no signal changes have occurred for the symbol during the current session.
 
 
-# Schedule Python scripts in Task Scheduler as per time frame selected
+## Schedule Python scripts in Task Scheduler as per time frame selected
 
