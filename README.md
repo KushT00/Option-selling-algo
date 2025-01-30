@@ -1,6 +1,21 @@
 # Trade Signal Bot
 
 This project is a Python-based trading signal bot that uses the Fyers API to fetch historical data for symbols, calculate trade signals using the Supertrend indicator, and send notifications for these signals via WhatsApp using Twilio.
+# [Optimized Supertrend Indicator with RSI Close Signal] - strategy
+
+##Results
+![image](https://github.com/user-attachments/assets/3d52eec1-a204-42f9-9206-7dad7f088f44)
+##1 Day Time frame
+
+![image](https://github.com/user-attachments/assets/fe99b2c3-f5a4-40af-af98-baa3a91bd3ab)
+##4 Hour Time frame
+
+
+#[Change time frame as per capacity of riding trades]
+#Automated messaging as trades are activated
+![image](https://github.com/user-attachments/assets/a600293c-7d6c-4294-bae3-a05d9171dd97)
+
+
 
 ## File Structure
 
@@ -105,4 +120,7 @@ The bot will:
 
 - **Error fetching data for a symbol**: Ensure your Fyers credentials are valid and the symbol exists in the Fyers database.
 - **No new trade signals triggered**: This means no signal changes have occurred for the symbol during the current session.
+
+
+# Schedule Python scripts in Task Scheduler as per time frame selected
 
