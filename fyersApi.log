@@ -1,0 +1,2 @@
+{"level":"ERROR","location":"[get_call:161] fyersModel","message":{"API":"/history","error":"Expecting value: line 1 column 1 (char 0)"},"timestamp":"2025-01-30 22:51:52,693+0530","service":"FyersAPI"}
+{"level":"ERROR","location":"[get_call:161] fyersModel","message":{"API":"/history","error":"Expecting value: line 1 column 1 (char 0)"},"timestamp":"2025-01-30 22:54:46,208+0530","service":"FyersAPI"}
