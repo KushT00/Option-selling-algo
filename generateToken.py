@@ -11,11 +11,11 @@ import hashlib
 
 
 # Client Info (ENTER YOUR OWN INFO HERE!! Data varies from users and app types)
-FY_ID = "YK07559"  # Your fyers ID
+FY_ID = "fyers user id"  # Your fyers ID
 APP_ID_TYPE = "2"  # Keep default as 2, It denotes web login
-TOTP_KEY = "WYUYLVNLNTEJQ65RGWAM3YITHWCH2QNZ"  # TOTP secret is generated when we enable 2Factor TOTP from myaccount portal
-PIN = "1405"  # User pin for fyers account
-APP_ID = "MDCIX0ITND"#"7ZZHXHVNKN"  # App ID from myapi dashboard is in the form appId-appType. Example - EGNI8CE27Q-100, In this code EGNI8CE27Q will be APP_ID and 100 will be the APP_TYPE
+TOTP_KEY = "Totp key generated from fyers"  # TOTP secret is generated when we enable 2Factor TOTP from myaccount portal
+PIN = "Fyers pin"  # User pin for fyers account
+APP_ID = "App id"# App ID from myapi dashboard is in the form appId-appType. Example - EGNI8CE27Q-100, In this code EGNI8CE27Q will be APP_ID and 100 will be the APP_TYPE
 REDIRECT_URI = "https://in.tradingview.com/chart/j9PsYCQv/?symbol=NSE%3ANIFTY"  # Redirect url from the app.
 APP_TYPE = "100"
 #APP_ID_HASH = "217c9b9e506820e731a58284bf09f994bf9b58243e5f100755483fdefb11dabc"  # SHA-256 hash of appId-appType:appSecret
