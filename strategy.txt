@@ -1,7 +1,6 @@
 //@version=5
 indicator("Optimized Supertrend Indicator with RSI Close Signal", overlay=true)
 
-// Input Parameters
 atrPeriod = input.int(10, "ATR Length", minval=1)
 factor = input.float(3.0, "Factor", step=0.01, minval=0.1)
 rsiPeriod = input.int(14, "RSI Period", minval=1)  // RSI period input
@@ -37,5 +36,4 @@ if rsiCrossAbove30
     label.new(bar_index, low, "Close", color=color.blue, textcolor=color.white, size=size.small, style=label.style_label_up)
     alert("Close signal at RSI 30 crossover", alert.freq_once_per_bar)
 
-// Plot Supertrend for visual confirmation
 plot(supertrend, title="Supertrend", color=direction < 0 ? color.green : color.red, linewidth=2)
