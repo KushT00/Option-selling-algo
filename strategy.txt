@@ -1,0 +1,41 @@
+//@version=5
+indicator("Optimized Supertrend Indicator with RSI Close Signal", overlay=true)
+
+// Input Parameters
+atrPeriod = input.int(10, "ATR Length", minval=1)
+factor = input.float(3.0, "Factor", step=0.01, minval=0.1)
+rsiPeriod = input.int(14, "RSI Period", minval=1)  // RSI period input
+
+// Calculate Supertrend
+[supertrend, direction] = ta.supertrend(factor, atrPeriod)
+
+// Calculate RSI
+rsi = ta.rsi(close, rsiPeriod)
+
+// Detect Trend Changes
+trendChangeUp = ta.crossover(direction, 0)  // Change to uptrend
+trendChangeDown = ta.crossunder(direction, 0)  // Change to downtrend
+
+// Call and Put Short Signals with Immediate Alerts
+if trendChangeUp
+    label.new(bar_index, high, "Call Short", color=color.green, textcolor=color.white, size=size.normal, style=label.style_label_down)
+    alert("Call Short signal generated", alert.freq_once_per_bar)
+
+if trendChangeDown
+    label.new(bar_index, low, "Put Short", color=color.red, textcolor=color.white, size=size.normal, style=label.style_label_up)
+    alert("Put Short signal generated", alert.freq_once_per_bar)
+
+// Close Signal when RSI crosses below 70 from above, or crosses above 30 from below
+rsiCrossBelow70 = ta.crossunder(rsi, 70)  // Crossing below 70 from above
+rsiCrossAbove30 = ta.crossover(rsi, 30)   // Crossing above 30 from below
+
+if rsiCrossBelow70
+    label.new(bar_index, high, "Close", color=color.orange, textcolor=color.white, size=size.small, style=label.style_label_down)
+    alert("Close signal at RSI 70 crossover", alert.freq_once_per_bar)
+
+if rsiCrossAbove30
+    label.new(bar_index, low, "Close", color=color.blue, textcolor=color.white, size=size.small, style=label.style_label_up)
+    alert("Close signal at RSI 30 crossover", alert.freq_once_per_bar)
+
+// Plot Supertrend for visual confirmation
+plot(supertrend, title="Supertrend", color=direction < 0 ? color.green : color.red, linewidth=2)
